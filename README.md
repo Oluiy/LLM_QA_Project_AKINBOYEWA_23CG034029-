@@ -85,31 +85,33 @@ Then open your browser to [http://localhost:5000](http://localhost:5000)
 
 ## 🌐 Deployment Options
 
-### Option A: Render.com (Recommended)
+### Option A: Heroku (Recommended)
 
 **Quick Deploy Button:**
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Oluiy/LLM_QA_Project_AKINBOYEWA_23CG034029-)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Oluiy/LLM_QA_Project_AKINBOYEWA_23CG034029-)
 
 **Manual Setup:**
 1. Push your code to GitHub ✅ **DONE**
-2. Create account at [render.com](https://render.com)
-3. Create new "Web Service" → Connect GitHub repo
-4. Set:
+2. Create account at [heroku.com](https://heroku.com)
+3. Create new app: `heroku create llm-qa-akinboyewa-23cg034029`
+4. Set environment variable: `heroku config:set GEMINI_API_KEY=AIzaSyCHf8LoLJCEu186BcJwoppruA--LpN8KBI`
+5. Deploy: `git push heroku main`
+6. Open: `heroku open`
+
+### Option B: Render.com
+1. Create account at [render.com](https://render.com)
+2. Create new "Web Service" → Connect GitHub repo
+3. Set:
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `gunicorn app:app`
    - **Environment Variable**: `GEMINI_API_KEY` = AIzaSyCHf8LoLJCEu186BcJwoppruA--LpN8KBI
-5. Deploy and copy the live URL
+4. Deploy and copy the live URL
 
-### Option B: PythonAnywhere
-1. Upload code to PythonAnywhere
-2. Set up Flask app in web console
-2. Add `GEMINI_API_KEY` in environment variables
-4. Configure WSGI file
-
-### Option C: Vercel
-1. Install Vercel CLI: `npm i -g vercel`
-2. Add `vercel.json` configuration
-3. Deploy with: `vercel --prod`
+### Option C: Railway
+1. Create account at [railway.app](https://railway.app)
+2. Connect GitHub repo
+3. Add environment variable: `GEMINI_API_KEY`
+4. Deploy automatically
 
 ## 🔧 Features
 
