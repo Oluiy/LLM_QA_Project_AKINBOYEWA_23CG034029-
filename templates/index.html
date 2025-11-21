@@ -9,11 +9,29 @@
   <body>
     <div class="container">
       <h1>LLM Question & Answer</h1>
-      <form method="post">
+      <form method="post" id="questionForm">
         <label for="question">Enter your question</label>
         <textarea id="question" name="question" rows="4">{{ question }}</textarea>
-        <button type="submit">Ask</button>
+        <button type="submit" id="submitBtn">
+          <span class="btn-text">Ask</span>
+          <span class="loading-spinner" style="display: none;">
+            <svg class="spinner" viewBox="0 0 50 50">
+              <circle class="path" cx="25" cy="25" r="20" fill="none" stroke="#ffffff" stroke-width="4"></circle>
+            </svg>
+            Processing...
+          </span>
+        </button>
       </form>
+
+      <div id="loadingCard" class="card loading-card" style="display: none;">
+        <h2>🤖 AI is thinking...</h2>
+        <div class="loading-animation">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <p>Analyzing your question and generating response...</p>
+      </div>
 
       {% if processed is not none %}
       <div class="card">
@@ -29,5 +47,30 @@
       </div>
       {% endif %}
     </div>
+
+    <script>
+      document.getElementById('questionForm').addEventListener('submit', function(e) {
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const loadingSpinner = submitBtn.querySelector('.loading-spinner');
+        const loadingCard = document.getElementById('loadingCard');
+        const question = document.getElementById('question').value.trim();
+        
+        if (!question) {
+          e.preventDefault();
+          alert('Please enter a question!');
+          return;
+        }
+        
+        // Show loading states
+        btnText.style.display = 'none';
+        loadingSpinner.style.display = 'flex';
+        submitBtn.disabled = true;
+        loadingCard.style.display = 'block';
+        
+        // Scroll to loading card
+        loadingCard.scrollIntoView({ behavior: 'smooth' });
+      });
+    </script>
   </body>
 </html>

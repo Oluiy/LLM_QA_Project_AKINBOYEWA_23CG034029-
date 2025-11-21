@@ -1,4 +1,4 @@
 Name: AKINBOYEWA
 Matric number: 23CG034029
-Live URL of hosted application: TODO - deploy and paste URL here
-GitHub repository link: TODO - push repository and paste link here
+Live URL of hosted application: https://llm-qa-080d96d1efa4.herokuapp.com/
+GitHub repository link: https://github.com/Oluiy/LLM_QA_Project_AKINBOYEWA_23CG034029-
