@@ -86,13 +86,18 @@ Then open your browser to [http://localhost:5000](http://localhost:5000)
 ## 🌐 Deployment Options
 
 ### Option A: Render.com (Recommended)
-1. Push your code to GitHub
+
+**Quick Deploy Button:**
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Oluiy/LLM_QA_Project_AKINBOYEWA_23CG034029-)
+
+**Manual Setup:**
+1. Push your code to GitHub ✅ **DONE**
 2. Create account at [render.com](https://render.com)
 3. Create new "Web Service" → Connect GitHub repo
 4. Set:
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `gunicorn app:app`
-   - **Environment Variable**: `GEMINI_API_KEY` = your key
+   - **Environment Variable**: `GEMINI_API_KEY` = AIzaSyCHf8LoLJCEu186BcJwoppruA--LpN8KBI
 5. Deploy and copy the live URL
 
 ### Option B: PythonAnywhere
